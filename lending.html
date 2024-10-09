@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHarmony</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #dbf9d8; /* Цвет фона страницы */
+            color: #333;
+        }
+        header {
+            background: #4CAF50; /* Цвет верхнего меню */
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        section {
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #4CAF50; /* Цвет заголовков */
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .cta {
+            display: inline-block;
+            background: #008CBA; /* Цвет кнопки призыва к действию */
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .cta:hover {
+            background: #005f7a;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            background: #333; /* Цвет нижнего колонтитула */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .feature {
+            background: #dff0d8; /* Светло-зеленый фон для блока с преимуществами */
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .subscribe-form {
+            background: #dff0d8; /* Светло-зеленый фон для формы подписки */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .subscribe-form input[type="email"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .subscribe-form button {
+            background: #4CAF50; /* Цвет кнопки формы подписки */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .subscribe-form button:hover {
+            background: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>EcoHarmony</h1>
+    <p>Стимулируем переработку отходов в городах</p>
+</header>
+
+<section>
+    <h2>Что такое EcoHarmony?</h2>
+    <p>EcoHarmony - это инновационная платформа, направленная на снижение экологического следа и повышение уровня переработки отходов. Мы понимаем, что без активного участия общества невозможно достичь значимых результатов в охране окружающей среды.</p>
+
+    <div class="feature">
+        <h3>Наши преимущества</h3>
+        <p>Мы предлагаем комплексное решение для города, включая:</p>
+        <ul>
+            <li><strong>Образовательные программы:</strong> Мы проводим мастер-классы и лекции для населения, чтобы повысить осведомленность о важности переработки.</li>
+            <li><strong>Сотрудничество с бизнесом:</strong> Наша команда работает с местными компаниями, предоставляя им инструменты для устойчивого развития.</li>
+            <li><strong>Технологические решения:</strong> Мы внедряем современные технологии, которые значительно упрощают процесс переработки отходов.</li>
+        </ul>
+    </div>
+
+    <h2>Для кого?</h2>
+    <p>EcoHarmony предназначена для:</p>
+    <ul>
+
+        <li><strong>Жителей:</strong> Если вы хотите внести свой вклад в сохранение экологии и улучшение качества жизни в своем городе.</li>
+        <li><strong>Местных предпринимателей:</strong> Продвижение устойчивых практик и участие в программах по переработке.</li>
+        <li><strong>Организаций:</strong> Стремящихся снизить свои углеродные выбросы и улучшить имидж среди потребителей.</li>
+    </ul>
+
+    <h2>Зачем?</h2>
+    <p>Наша цель - создать чистую и здоровую среду для будущих поколений, объединив усилия всех заинтересованных сторон. Переработка отходов – это не только забота об экологии, но и возможность для бизнеса в производстве новых материалов!</p>
+
+    <a href="#" class="cta">Присоединиться к EcoHarmony</a>
+
+    <div class="subscribe-form">
+        <h2>Подпишитесь на наши новости!</h2>
+        <p>Будьте в курсе последних новых программ и событий. Введите свой email, и мы будем держать вас в курсе.</p>
+        <form id="subscribe-form">
+            <input type="email" placeholder="Ваш email" required>
+            <button type="submit">Подписаться</button>
+        </form>
+        <p id="response-message" style="margin-top: 10px;"></p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2023 EcoHarmony. Все права защищены.</p>
+</footer>
+
+<script>
+    document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const emailInput = event.target.querySelector('input[type="email"]');
+        const responseMessage = document.getElementById('response-message');
+
+        if (emailInput.value) {
+            responseMessage.textContent = `Спасибо за подписку, ${emailInput.value}! Вы будете получать наши новости.`;
+            emailInput.value = '';
+        }
+    });
+</script>
+
+</body>
+</html>
